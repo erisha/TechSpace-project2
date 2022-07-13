@@ -95,7 +95,7 @@
 
 
 
-Schema: (models)
+## Schema: (models)
 
 -Profile 
 	- name - string
@@ -215,8 +215,9 @@ TechSpace-project 2
 | /message/reply/:id | post | reply to a message |
 | /project | get | view all user projects |
 | /project/:id | get | view a user projects |
-| /project | post | add project to collection|
-| /project/:id | delete | delete a project
+| /project | post | add project to collection |
+| /project/:id | delete | delete a project |
+
 
 
 

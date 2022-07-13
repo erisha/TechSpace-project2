@@ -3,7 +3,8 @@
 ////////////////////////
 
 const express = require('express')
-const app = require('liquid-express-views')
+//const app = require('liquid-express-views')
+const app = express()
 
 app.get('/', (req,res) => {
     res.send(`TechSpace Homepage`)
@@ -12,6 +13,6 @@ app.get('/', (req,res) => {
 const port = 3000
 
 
-app.listen(port, () => { 
-    console.log(`TechSpace is running on ${port}`)
+app.listen( port, ()=> {
+    console.log(`Listening to TechSpace ${port}`)
 })
