@@ -139,7 +139,7 @@ Schema: (models)
 
 
 Using 
-npm express liquid dot env
+npm express,liquid, liquid-express views, dot env, mongoose, mongodb
 API - upwork job board
 
 
@@ -189,3 +189,13 @@ TechSpace-project 2
 ![Add Comment](https://i.imgur.com/ikyYyZA.png)
 
 ![Messages](https://i.imgur.com/okUQW4i.png)
+
+
+
+-EDR
+![EDR](https://i.imgur.com/iHcq4W6.png)
+
+
+| URL | Verb | Description|
+|-----|------|------------|
+|/user|POST  | 

@@ -1,0 +1,28 @@
+{
+  "name": "techspace-project2",
+  "version": "1.0.0",
+  "description": "TechSpace Networking App for Tech professionals",
+  "main": "server.js",
+  "scripts": {
+    "test": "test",
+    "start": "node server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/erisha/TechSpace-project2.git"
+  },
+  "author": "Erisha Roach",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/erisha/TechSpace-project2/issues"
+  },
+  "homepage": "https://github.com/erisha/TechSpace-project2#readme",
+  "dependencies": {
+    "dotenv": "^16.0.1",
+    "express": "^4.18.1",
+    "liquid": "^5.1.1",
+    "liquid-express-views": "^1.0.8",
+    "mongodb": "^4.8.0",
+    "mongoose": "^6.4.4"
+  }
+}
