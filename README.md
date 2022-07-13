@@ -172,29 +172,20 @@ TechSpace-project 2
 
 
 
-        Wireframes
+       ** Wireframes
 
-        ![Start page]
-         (https://i.imgur.com/98AovRB.png
-)
-        ![Sign UP]
-         (https://i.imgur.com/O2CuFlC.png)
+![StartPage](https://i.imgur.com/98AovRB.png)
 
-         ![Login]
-         (https://i.imgur.com/tAzLC8y.png)
+![SignUP](https://i.imgur.com/O2CuFlC.png)
 
-         ![Homepage]
-         (https://i.imgur.com/hEAU8hX.png)
+![Login](https://i.imgur.com/tAzLC8y.png)
 
+![Homepage](https://i.imgur.com/hEAU8hX.png)
 
-         ![User profile]
-         [https://i.imgur.com/pCOWAo2.png]
+![User profile](https://i.imgur.com/pCOWAo2.png)
 
-         ![Connection/other user profile]
-         (https://i.imgur.com/V7GulgI.png)
+![Connection/other user profile](https://i.imgur.com/V7GulgI.png)
 
-         ![Add Comment]
-         (https://i.imgur.com/ikyYyZA.png)
+![Add Comment](https://i.imgur.com/ikyYyZA.png)
 
-         ![Messages]
-         (https://i.imgur.com/okUQW4i.png)
+![Messages](https://i.imgur.com/okUQW4i.png)
