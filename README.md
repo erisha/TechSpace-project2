@@ -6,7 +6,7 @@
 
 
 
-User stories: (`As a user….`)
+## User stories: (`As a user….`)
 
 - Sign up & create an account
     -fill out form
@@ -172,7 +172,7 @@ TechSpace-project 2
 
 
 
-       ** Wireframes
+## Wireframes
 
 ![StartPage](https://i.imgur.com/98AovRB.png)
 
@@ -192,10 +192,31 @@ TechSpace-project 2
 
 
 
--EDR
+## EDR
 ![EDR](https://i.imgur.com/iHcq4W6.png)
 
 
+## Route Table
+
 | URL | Verb | Description|
 |-----|------|------------|
-|/user|POST  | 
+| /user/signup |post | register a user |
+| /user/login | post | user signin - new session |
+| /user/ signout | delete | user signout |
+| /user/update-profile| put |form to update info name, email, pw, etc|
+| /new-post| post | create a new post|
+| /post/:id | delete | delete a single post |
+| /post/:id | patch | edit a single post |
+| /post/:id | get | view single post |
+| /comment | post | create new comment |
+| /comment/:id | delete| delete a single comment |
+| /comment/:id | patch | edit a single comment |
+| /message | post | create a new message |
+| /message/reply/:id | post | reply to a message |
+| /project | get | view all user projects |
+| /project/:id | get | view a user projects |
+| /project | post | add project to collection|
+| /project/:id | delete | delete a project
+
+
+
