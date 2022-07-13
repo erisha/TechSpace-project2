@@ -138,3 +138,34 @@ Schema: (models)
 
 
 
+Using 
+npm express liquid dot env
+API - upwork job board
+
+
+TechSpace-project 2
+    -models
+        -profile
+        -user
+        -comment
+        -message
+
+    -views
+        - profile
+            -edit
+            -main
+
+        -homepage
+            -post
+            -comments
+        
+        -messages
+        
+        -user
+            - sign up
+            - login
+        -layout
+
+    -Server.js
+    - public
+        -style.css
