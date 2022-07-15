@@ -8,33 +8,44 @@
 
 ## User stories: (`As a user….`)
 
-- Sign up & create an account
-    -fill out form
-        - name
-        - email
-        - birthday
-        - create username
-        - create password
-    -click create account ---> login page
-        - user logs in using username/password
+- Login or create an new profile
 
-- Login existing account
-    - type in username
-    - type in password
-    - click login --> homepage
+    - Create a new profile
+        -fill out form
+            - name
+            - email
+            - birthday
+            - create username
+            - create password
+        -click create account ---> login page
+            - user logs in using username/password
 
-- Create a profile
-    - About me 
-    - Add a profile picture
-    - Add your connects & socials
-    - Add your resume (resume is the profile page?)
-    - Add your skills
-    - Share your work/projects
+    - Login existing account
+        - type in username
+        - type in password
+        - click login --> homepage
+
+
+- Add to profile 
+    -click edit profile
+    -user can add new info
+        - About me 
+        - Add a profile picture
+        - Add your connects & socials
+        - Add your resume (resume is the profile page?)
+        - Add your skills
+        - Share your work/projects
+    - create new category (future version)
 
 - Update/ Add to profile
     -click edit profile
-    -user can update existing info
-    - also add new info
+    -user can update existing or add info
+        - About me 
+        - Add a profile picture
+        - Add your connects & socials
+        - Add your resume (resume is the profile page?)
+        - Add your skills
+        - Share your work/projects
     - create new category (future version)
 
 - Create a post
@@ -109,7 +120,7 @@
     - Password - string
 
 
-- Sign Up
+- New Profile
     - Name - string
     - Email - string
     - Birthday - string
@@ -121,14 +132,14 @@
     - Body - string
     - Author - string
     - Timestamp
-    - Likes - number - default value of 0
+    - Likes - number - default value of 0(Version 2)
     - 
 
 - Comment
     - Author  - string
     - Body - string
     - Timestamp
-    - Likes - number - default value of 0 
+    - Likes - number - default value of 0 (Version 2)
 
 
 - Message
@@ -144,31 +155,34 @@ API - upwork job board
 
 
 TechSpace-project 2
-    -models
-        -profile
-        -user
-        -comment
-        -message
+    - models
+        - profile
+        - user
+        - comment
+        - blogPost
+        - seed
+        - connection
+        - message(version 2)
 
     -views
         - profile
             -edit
             -main
 
-        -homepage
-            -post
-            -comments
+        - homepage
+            - post
+            - comments
         
-        -messages
+
         
-        -user
+        - user
             - sign up
             - login
-        -layout
+        - layout
 
-    -Server.js
+    - Server.js
     - public
-        -style.css
+        - style.css
 
 
 
@@ -192,8 +206,8 @@ TechSpace-project 2
 
 
 
-## EDR
-![EDR](https://i.imgur.com/iHcq4W6.png)
+## ERD
+![ERD](https://i.imgur.com/iHcq4W6.png)
 
 
 ## Route Table
