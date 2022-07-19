@@ -27,7 +27,10 @@ const profileSchema = new Schema(
         type: Schema.Types.ObjectId, // a single User ._id
         ref: 'User' // const User = model('User', userSchema) the string of 'User' is how we reference a model
     },
-    //blogPosts: [blogPostSchema]
+    blogPost:{
+        type: mongoose.Schema.Types.ObjectId,
+        ref: "BlogPost"
+    }
 })
 
 // profile model with profileSchema
