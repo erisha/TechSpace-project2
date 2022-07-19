@@ -26,4 +26,5 @@ const blogPostSchema = new Schema(
 // this collections will be called fruits
 const BlogPost = model('BlogPost', blogPostSchema)
 
-module.exports = blogPostSchema
+
+module.exports = BlogPost

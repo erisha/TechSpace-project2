@@ -15,16 +15,16 @@ const router = express.Router()
 // list routes
 ///////////////////////////////////////
 
-// new profile routes (Signup)
+// Signup Routes
 // GET to show the form
-router.get('/newProfile', (req, res) => {
-    res.render('users/newProfile')
+router.get('/signup', (req, res) => {
+    res.render('users/signup')
 })
 
 //POST to make the db request
-router.post('/newProfile', async (req, res) => {
+router.post('/signup', async (req, res) => {
     console.log('this is our initial request body', req.body)
-    
+    //encrypt password
     req.body.password = await bcrypt.hash(
         req.body.password,
         await bcrypt.genSalt(10)
@@ -57,7 +57,7 @@ router.post('/login', async (req, res) => {
     // console.log('this is the request object', req)
     // destructure data from request body
     const { username, password } = req.body
-    // console.log('this is username', username)
+     //console.log('this is username', username)
     // console.log('this is password', password)
     console.log('this is the session', req.session)
     // first we find the user
@@ -66,8 +66,7 @@ router.post('/login', async (req, res) => {
             // we check if the user exists
             // if they do, we'll compare the passwords and make sure it's correct
             if (user) {
-                // compare the pw
-                // bcrypt.compare evaluates to a truthy or falsy value
+                // compare the pw bcrypt.compare evaluates to a truthy or falsy value
                 const result = await bcrypt.compare(password, user.password)
 
                 if (result) {
@@ -80,7 +79,7 @@ router.post('/login', async (req, res) => {
                     console.log('this is the session after login', req.session)
                     
                         //*** if code dont work revert back to techspace or profileid
-                    res.redirect('/techspace/:userId')
+                    res.redirect('/profile')
                 } else {
                     // otherwise(pw incorrect) send an error message
                     // for now just send some json error
@@ -107,7 +106,7 @@ router.get('/logout', (req, res) => {
         console.log('this is returned from req.session.destroy', ret)
         console.log('session has been destroyed')
         console.log(req.session)
-        res.redirect('/techSpace')
+        res.redirect('/profile')
     })
 })
 

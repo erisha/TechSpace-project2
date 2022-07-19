@@ -30,7 +30,7 @@ app.use(methodOverride('_method'))
 app.use(express.urlencoded({ extended: false }))
 app.use(express.static('public'))
 const session = require('express-session')
-const MongoStore = require( 'connect-mongo' ).default
+const MongoStore = require( 'connect-mongo' )
 
 
 //set up sessions
@@ -49,15 +49,15 @@ app.use(
 ///////////////////////
 
 
-app.use('/blogPost', blogPostRoutes)
+app.use('/blogPosts', blogPostRoutes)
 app.use('/users', userRoutes)
 app.use('/comments', commentRoutes)
-app.use('/profile', profileRoutes)
+app.use('/myprofile', profileRoutes)
 // localhost:3000/
 
 app.get('/', (req, res) => {
 	//res.send('TechSpace Homepage')
-	res.redirect('/techSpace')
+	res.redirect('/')
 })
 
 

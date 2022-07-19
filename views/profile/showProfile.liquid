@@ -1,0 +1,34 @@
+{% layout 'layout.liquid' %}
+{% block content %}
+    <div class="container-md">
+        <article>
+
+            
+            <div class="btn-group">
+                <a href="/profile/{{profile._id}}/edit" class="btn btn-primary">Edit Profile</a>
+                <form action="/profile/{{profile._id}}?_method=DELETE" method="POST">
+                    <input type="submit" value="Delete" class="btn btn-danger">
+                </form>
+            </div>
+        </article>
+        <div class="col-md-6">
+            <form action="/blogPosts/{{profile._id}}" method="POST">
+                <fieldset>
+                    <legend>Add Post</legend>
+                    <label class="form-label">My Posts: </label>
+                    <input type="text" class="form-control" name="note" placeholder="Enter comment here"/>
+                </fieldset>
+                <input type="submit" class="btn btn-success" value="Add Post" />
+            </form>
+        </div>
+        {% if profile.blogposts.length > 0 %}
+        <div class="container-sm justify-content-center">
+            <div class="col-md-8 col-lg-6" >
+                {% for blogPost in fruit.blogPosts %}
+                {% render '../blogPost.liquid' blogPost: blogPost, userId: userId, profile: profile, username: username%}
+                {% endfor %}
+            </div>
+        </div>
+        {% endif %}
+    </div>
+{% endblock %}

@@ -2,27 +2,27 @@ const express = require('express')
 // router
 const router = express.Router()
 // importing profile/blogpost model to access database
-const User_Profile = require('../models/profile')
-const BlogPost = require('../models/blogPost')
+const Profile = require('../models/profile')
+//const BlogPost = require('../models/blogPost')
 
 // POST - Create Blog Post
 // localhost:3000/blogposts/:profileId <- A single profile can have many blogpost
 router.post('/:profileId', (req, res) => {
-    const profile = req.params.profileId
+    const profileId = req.params.profileId
     req.body.author = req.body.userId
 
-    User_Profile.findById(profile)
+    Profile.findById(profileId)
         // after we found a profile 
         // take that profile and add the blogpost
         .then(profile => {
             // single blogpost doc there is a field called comments
-            profile.blogPost.push(req.body)
+            profile.blogPosts.push(req.body)
 
             // if we change a doc, we have to return and call .save() on the doc.
             return profile.save()
         })
         .then(profile => {
-            res.redirect(`/profile/${profile._id}`)
+            res.redirect(`/myprofile/${profile._id}`)
         })
         .catch(err => {
             res.json(err)
@@ -37,10 +37,10 @@ router.delete('/delete/:profileId/:blogPostId', (req, res) => {
     const blogPostId = req.params.blogPostId
 
     // find a profile by it's ID
-    User_Profile.findById(profileId) // a single profile  will have many blogpost
-    // find this profile by it's ID
+    Profile.findById(profileId) // a single profile  will have many blogpost
+    // find this blog post by it's ID
         .then(profile => {
-            const blogPost = profile.blogPost.id(blogPostId)
+            const blogPost = profile.blogPosts.id(blogPostId)
 
             // remove blogpost
             blogPost.remove()
@@ -49,7 +49,7 @@ router.delete('/delete/:profileId/:blogPostId', (req, res) => {
             return profile.save()
         })
         .then(profile => {
-            res.redirect(`/profile/${profileId}`)
+            res.redirect(`/myprofile/${profileId}`)
         })
         .catch(err => {
             res.send(err)

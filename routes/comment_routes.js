@@ -21,14 +21,14 @@ router.post('/:blogPostId', (req, res) => {
             return blogPost.save()
         })
         .then(blogPost => {
-            res.redirect(`/blogPost/${blogPost._id}`)
+            res.redirect(`/blogPosts/${blogPost._id}`)
         })
         .catch(err => {
             res.json(err)
         })
 })
 
-// DELETE - delete yeeting
+// DELETE - delete comment
 // localhost:3000/comments/delete/:blogPostId/:commId
 router.delete('/delete/:blogPostId/:commId', (req, res) => {
     const blogPostId = req.params.blogPostId
