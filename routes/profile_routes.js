@@ -31,7 +31,7 @@ router.post('/', (req,res) => {
 /// GET - Show user's profile
 // localhost:3000/profile/:id <- view user's page
 
-router.get('/myprofile', (req, res) => {
+router.get('/', (req, res) => {
     
      const profileId = req.params.id
 
@@ -40,7 +40,7 @@ router.get('/myprofile', (req, res) => {
         .then(profile => {
             const userId = req.session.userId
             const username = req.session.username
-            res.render('profile/show', { profile, userId, username })
+            res.render('profile/showProfile', { profile, userId, username })
         } ) 
         .catch(err => {
             res.json(err)
@@ -49,23 +49,23 @@ router.get('/myprofile', (req, res) => {
 
     })
 
-    router.get('/', (req,res) => {
-        Profile.find({})
-            .then(myprofile => {
-                res.render('myprofile', { myprofile })
-            })
-            .catch(err => {
-                res.json(err)
-            })
+    // router.get('/', (req,res) => {
+    //     Profile.find({})
+    //         .then(myprofile => {
+    //             res.render('myprofile', { myprofile })
+    //         })
+    //         .catch(err => {
+    //             res.json(err)
+    //         })
 
-    })
+    // })
 
-    router.get('/myprofile', (req, res) => {
-        Profile.find({ owner: req.session.userId })
-                .then(profile => {
-                    res.render('myprofile', { profile})
-                })
-    })
+    // router.get('/myprofile', (req, res) => {
+    //     Profile.find({ owner: req.session.userId })
+    //             .then(profile => {
+    //                 res.render('myprofile', { profile})
+    //             })
+    // })
 
 
 // DELETE - delete  Delete Profile

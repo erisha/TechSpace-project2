@@ -2,9 +2,18 @@
 
 {% block content %}
 <div class="container-md">
-    <form action="/fruits" method="POST">
+    <form action="/m" method="POST">
         <fieldset>
-            <legend>Create A New Fruit</legend>
+            <legend>Create Your Profile</legend>
+
+            <label class="form-label" for="customFile">Upload Profile Pic</label>
+            <input 
+                type="file" 
+                class="form-control" 
+                id="upload" 
+                placeholder="Upload Profile Pic"
+                />
+
             <label class="form-label">Name:</label>
             <input 
                 class="form-control" 
@@ -12,24 +21,24 @@
                 name="name" 
                 placeholder="enter name"
             >
-            <label class="form-label">Color:</label>
+
+            <label class="form-label">About ME:</label>
             <input 
                 class="form-control" 
                 type="text" 
-                name="color" 
-                placeholder="enter color"
+                name="about-me" 
+                placeholder="About Me"
             >
-            <label class="form-label">Ready to Eat?</label>
-            <input 
-                class="form-check-input" 
-                type="checkbox" 
-                name="readyToEat"
-            >
+            <label class="form-label" for="customFile">Upload Resume</label>
+            <input type="file" class="form-control" id="customFile" />
+            
+            
+        
         </fieldset>
         <input 
             type="submit" 
-            value="Create New Fruit" 
-            class="btn btn-success"
+            value="Create Your Profile" 
+            class="btn btn-dark"
         >
     </form>
 </div>

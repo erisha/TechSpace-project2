@@ -53,11 +53,12 @@ app.use('/blogPosts', blogPostRoutes)
 app.use('/users', userRoutes)
 app.use('/comments', commentRoutes)
 app.use('/myprofile', profileRoutes)
-// localhost:3000/
 
+
+// localhost:3000/
 app.get('/', (req, res) => {
 	//res.send('TechSpace Homepage')
-	res.redirect('/')
+	res.redirect('/users/login')
 })
 
 
