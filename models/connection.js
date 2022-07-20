@@ -1,16 +1,20 @@
-require('dotenv').config()
+const mongoose = require('mongoose');
 
-const mongoose = require('mongoose')
-
-
-const DATABASE_URI = process.env.DATABASE_URI
-const config = {
-    useNewUrlParser: true,
-    useUnifiedTopology: true
-}
+// Fire off the connection to Mongo DB
+mongoose.connect(process.env.DATABASE_URI, {
+  useNewUrlParser: true,
+  useUnifiedTopology: true
+});
 
 
-mongoose.connect(DATABASE_URI, config)
+mongoose.connection.on('connected', () => {
+  console.log(`Mongoose connected to ${mongoose.connection.host}:${mongoose.connection.port}`);
+});
+
+mongoose.connection.on("error", (err) => {
+  console.log("Could not connect to MongoDB!", err);
+});
+
 
 mongoose.connection
 
@@ -19,5 +23,10 @@ mongoose.connection
     .on('close', () => console.log('Disconnected from Mongoose'))
     
     .on('error', err => console.error(err))
+
+
+
+
+
 
 module.exports = mongoose
