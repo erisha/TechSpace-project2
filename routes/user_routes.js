@@ -78,7 +78,7 @@ router.post('/login', async (req, res) => {
                     // redirect to the '/fruits' page
                     console.log('this is the session after login', req.session)
                     
-                        //*** if code dont work revert back to techspace or profileid
+                        //http://localhost:3000/myprofile
                     res.redirect('/myprofile')
                 } else {
                     // otherwise(pw incorrect) send an error message

@@ -2,38 +2,41 @@
 
 {% block content %}
 <div class="container-md">
-    <form action="/fruits/{{fruit._id}}?_method=PUT" method="POST">
+    <form action="/profile/{{profile._id}}?_method=PUT" method="POST">
         <fieldset>
-            <legend>Edit This {{fruit.name}}</legend>
+            <legend>Edit This {{Profile.name}}</legend>
+            
+            <label class="form-label" for="uploadPic">Upload Profile Pic</label>
+            <input 
+                type="file" 
+                class="form-control" 
+                id="upload" 
+                placeholder="Upload Profile Pic"
+                />
             <label class="form-label">Name:</label>
             <input 
                 type="text" 
                 name="name" 
                 placeholder="enter name" 
                 class="form-control"
-                value="{{fruit.name}}"
+                value="{{profile.name}}"
             >
-            <label class="form-label">Color:</label>
+            <label class="form-label">About ME:</label>
             <input 
+                class="form-control" 
                 type="text" 
-                name="color" 
-                placeholder="enter color"
-                class="form-control"
-                value="{{fruit.color}}"
+                name="about-me" 
+                placeholder="About Me"
             >
-            <label class="form-label">Ready to Eat?</label>
-            <input 
-                type="checkbox" 
-                name="readyToEat" 
-                class="form-check-input"
-                {% if fruit.readyToEat %} 
-                    checked
-                {% endif %}
-            >
+            <label class="form-label" for="customFile">Upload Resume</label>
+            <input type="file" class="form-control" id="customFile" />
+            
+            
+            
         </fieldset>
         <div class="btn-group">
-            <input type="submit" value="Edit {{ fruit.name }}" class="btn btn-success">
-            <a href="/fruits" class="btn btn-warning">Nevermind</a>
+            <input type="submit" value="Edit {{ profile.name }}" class="btn btn-dark">
+            <a href="/myprofile" class="btn btn-warning">Nevermind</a>
         </div>
     </form>
 </div>

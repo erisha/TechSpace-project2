@@ -114,7 +114,7 @@ router.put('/:id', (req, res) => {
 
     Profile.findByIdAndUpdate(profileId, req.body, { new: true })
         .then(profile => {
-            res.redirect(`/myprofile/${profile._id}`)
+            res.redirect(`/myprofile/${profile._id}/edit`)
         })
         .catch(err => {
             res.json(err)
