@@ -8,10 +8,16 @@ const { Schema, model } = mongoose
 const blogPostSchema = new Schema(
 	{
 		author: String,
-		body: String,
+		body: {
+			type:String,
+			max: 500
+		},
 		owner: {
 			type: Schema.Types.ObjectId, // a single User ._id
 			ref: 'User', // const User = model('User', userSchema) the string of 'User' is how we reference a model
+		},
+		img: {
+			type: String
 		},
 		comments: [commentSchema] 
         // a blogPost can have many comments. Comments are a sub doc of blogPost 
@@ -22,8 +28,7 @@ const blogPostSchema = new Schema(
 )
 
 
-// need to make a model
-// this collections will be called fruits
+
 const BlogPost = model('BlogPost', blogPostSchema)
 
 

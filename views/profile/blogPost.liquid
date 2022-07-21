@@ -1,0 +1,15 @@
+{% block content %}
+
+<div class="card md-4 shadow">
+    <div class="card-body">
+        <p>{{ blogPost.note }}</p>
+        <div class="d-flex justify-content-between">
+            <small>author: {{ username }}</small>
+            <form action="/blogPosts/delete/{{profile._id}}/{{blogPost._id}}?_method=DELETE" method="POST">
+                <input type="submit" value="X" />
+            </form>
+        </div>
+    </div>
+</div>
+
+{% endblock %}

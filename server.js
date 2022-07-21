@@ -61,8 +61,9 @@ app.get('/', (req, res) => {
 	res.redirect('/users/login')
 })
 
-
-
+// app.get('/home', (req,res) => {
+// 	res.send('TechSpace Homepage ')
+// }) 
 
 
 ///////////////////

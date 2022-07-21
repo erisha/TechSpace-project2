@@ -79,7 +79,7 @@ router.post('/login', async (req, res) => {
                     console.log('this is the session after login', req.session)
                     
                         //*** if code dont work revert back to techspace or profileid
-                    res.redirect('/profile')
+                    res.redirect('/myprofile')
                 } else {
                     // otherwise(pw incorrect) send an error message
                     // for now just send some json error
@@ -106,7 +106,7 @@ router.get('/logout', (req, res) => {
         console.log('this is returned from req.session.destroy', ret)
         console.log('session has been destroyed')
         console.log(req.session)
-        res.redirect('/profile')
+        res.redirect('/users/login')
     })
 })
 
